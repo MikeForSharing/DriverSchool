@@ -1,0 +1,51 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+        "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+        "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping package="com.lhh.car.domain">
+	<class name="Coach" table="mike_coach">
+		<id name="id">
+            <generator class= "native"/>
+		</id>
+		<property name="name"/>
+		<property name="description"/>
+
+		<!-- users属性，本类与users的一对多 -->
+		<set name="users">
+			<key column="coachId"></key>
+			<one-to-many class="User" />
+		</set>
+		
+		
+	
+
+		<!-- parent属性，本类与Coach（上级）的多对一 -->
+		<many-to-one name="parent" class="Coach" column="parentId"></many-to-one>
+
+
+		<!-- children属性，本类与Coach（下级）的一对多 -->
+		<set name="children" cascade="delete" order-by="id ASC">
+			<key column="parentId"></key>
+			<one-to-many class="Coach" />
+		</set>
+		
+		
+		<!-- reserves属性，本类与reserves的一对多 -->
+		<set name="reserves">
+			<key column="coachId"></key>
+			<one-to-many class="Reserve" />
+		</set>
+		
+		<!-- reserveTrains属性，本类与reserveTrains的一对多 -->
+		<set name="reserveTrains">
+			<key column="coachId"></key>
+			<one-to-many class="ReserveTrain" />
+		</set>
+
+			
+		
+		
+		
+	</class>
+</hibernate-mapping>

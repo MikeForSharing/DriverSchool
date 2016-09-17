@@ -1,0 +1,48 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+        "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+        "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping package="com.lhh.car.domain">
+	<class name="User" table="mike_user">
+		<id name="id">
+            <generator class= "native"/>
+		</id>
+
+		<property name="name"></property>
+		<property name="loginName"></property>
+		<property name="password"></property>
+		<property name="gender"></property>
+		<property name="phoneNumber"></property>
+		<property name="email"></property>
+		<property name="description"></property>
+
+
+	<!--coach属性  本类与coach的多对一 -->
+		<many-to-one name="coach" class="Coach" column="coachId"></many-to-one>
+		
+		
+		
+	<!-- cars属性，本类与cars的多对多的属性  -->
+		<set name="cars" table="mike_user_car">
+			<key column="userId"></key>
+			<many-to-many class="Car" column="carId"></many-to-many>
+		</set>
+	
+	
+	
+	<!-- roles属性，本类与roles的多对多的属性  -->
+		<set name="roles" table="mike_user_role" lazy="false">
+			<key column="userId"></key>
+			<many-to-many class="Role" column="roleId"></many-to-many>
+		</set>
+	
+	
+		<!-- finances属性，本类与finances的一对多 -->
+		<set name="finances">
+			<key column="UserId"></key>
+			<one-to-many class="Finance" />
+		</set>
+	
+	</class>
+</hibernate-mapping>

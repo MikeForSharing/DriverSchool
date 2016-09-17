@@ -1,0 +1,178 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+    "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+    "http://struts.apache.org/dtds/struts-2.0.dtd">
+
+<struts>
+
+	<!-- 配置为开发模式 -->
+    <constant name="struts.devMode" value="true" />
+    <!-- 把扩展名配置为action -->
+    <constant name="structs.action.extension" value="action"></constant>
+    <!-- 把主题配置改为simple -->
+    <constant name="structs.ui.theme" value="simple"></constant>
+    
+    
+    <package name="default" namespace="/" extends="struts-default">
+    
+    	<interceptors>
+    		<!-- 声明拦截器 -->
+    		<interceptor name="checkPrivilege" class="com.lhh.car.util.CheckPrivilegeInterceptor"></interceptor>
+    		
+    		<!-- 重新定义拦截器栈 -->
+<!--      		<interceptor-stack name="defaultStack">  -->
+<!--      			<interceptor-ref name="checkPrivilege"></interceptor-ref>  -->
+<!--    			<interceptor-ref name="defalutStack"></interceptor-ref>  -->
+<!--     		</interceptor-stack>  -->
+    		
+     		<interceptor-stack name="defaultStack"> 
+    			<interceptor-ref name="checkPrivilege"></interceptor-ref> 
+    			<interceptor-ref name="defaultStack"></interceptor-ref> 
+    		</interceptor-stack> 
+
+    	</interceptors>
+    
+    
+    	<!-- 配置全局的result -->
+    	<global-results>
+    		 <result name="loginUI">/WEB-INF/jsp/behind/userAction/loginUI.jsp</result> 
+    		 <result name="noPrivilege">/noPrivilege.jsp</result> 
+    	</global-results>
+    
+		<action name="testAction" class="testAction"><!-- structs与spring整合 -->
+			<result>/testAction.jsp</result>
+		</action>
+	    
+	  	<!-- 车辆管理 -->
+	  	<action name="car_*" class="carAction" method="{1}">
+	  		<result name="list">/WEB-INF/jsp/behind/carAction/list.jsp</result>
+	  		<result name="saveUI">/WEB-INF/jsp/behind/carAction/saveUI.jsp</result>
+	  		<result name="toList" type="redirectAction">car_list</result>
+	  	</action>
+	  	
+	  	<!-- 导航栏管理 -->
+	  	<action name="navigation_*" class="navigationAction" method="{1}">
+	  		<result name="list">/WEB-INF/jsp/behind/navigationAction/list.jsp</result>
+	  		<result name="saveUI">/WEB-INF/jsp/behind/navigationAction/saveUI.jsp</result>
+	  		<result name="toList" type="redirectAction">navigation_list</result>
+	  		
+	  		<result name="introductionContext">/WEB-INF/jsp/behind/navigationAction/introduction.jsp</result>
+	  		<result name="chargeStandardContext">/WEB-INF/jsp/behind/navigationAction/chargeStandard.jsp</result>
+	  		
+	  		<result name="registrationNoticeContext">/WEB-INF/jsp/behind/navigationAction/registrationNotice.jsp</result>
+	  		
+	  		<result name="certificateRequestContext">/WEB-INF/jsp/behind/navigationAction/certificateRequest.jsp</result>
+	  		
+	  		<result name="exerciseCharacterContext">/WEB-INF/jsp/behind/navigationAction/exerciseCharacter.jsp</result>
+	  		
+	  		<result name="schoolRouteContext">/WEB-INF/jsp/behind/navigationAction/schoolRoute.jsp</result>
+	  		
+	  		<result name="learnExperienceContext">/WEB-INF/jsp/behind/navigationAction/learnExperience.jsp</result>
+	  		
+	  		<result name="schoolAdvantageContext">/WEB-INF/jsp/behind/navigationAction/schoolAdvantage.jsp</result>
+	  		
+	  		
+	  		
+	  	
+	  		
+	  		
+	  	</action>
+	  	
+	  	
+	  	
+	  	<!-- 教练管理 -->
+	  	<action name="coach_*" class="coachAction" method="{1}">
+	  		<result name="list">/WEB-INF/jsp/behind/coachAction/list.jsp</result>
+	  		<result name="saveUI">/WEB-INF/jsp/behind/coachAction/saveUI.jsp</result>
+	  		<result name="toList" type="redirectAction">coach_list?parentId=${parentId}</result>
+	  	</action>
+	  	
+	  	<!-- 学员管理 -->
+	  	<action name="student_*" class="studentAction" method="{1}">
+	  		<result name="list">/WEB-INF/jsp/behind/studentAction/list.jsp</result>
+	  		<result name="saveUI">/WEB-INF/jsp/behind/studentAction/saveUI.jsp</result>
+	  		<result name="toList" type="redirectAction">student_list?parentId=${parentId}</result>
+	  	</action>
+	  	
+	  	
+	  	
+	  	<!-- 考试预约管理 -->
+	  	<action name="reserve_*" class="reserveAction" method="{1}">
+	  		<result name="list">/WEB-INF/jsp/behind/reserveAction/list.jsp</result>
+ 	  		<result name="saveUI">/WEB-INF/jsp/behind/reserveAction/saveUI.jsp</result>
+ 	  		<result name="toList" type="redirectAction">reserve_list</result>
+	  	</action>
+	  	
+	  	
+	    <!-- 培训预约管理 -->
+	  	<action name="reserveTrain_*" class="reserveTrainAction" method="{1}">
+	  		<result name="list">/WEB-INF/jsp/behind/reserveTrainAction/list.jsp</result>
+ 	  		<result name="saveUI">/WEB-INF/jsp/behind/reserveTrainAction/saveUI.jsp</result>
+ 	  		<result name="toList" type="redirectAction">reserveTrain_list</result>
+	  	</action>
+	  	
+	  	
+	  	
+	  	<!-- 权限管理 -->
+	  	<action name="role_*" class="roleAction" method="{1}">
+	  		<result name="list">/WEB-INF/jsp/behind/roleAction/list.jsp</result>
+	  		<result name="saveUI">/WEB-INF/jsp/behind/roleAction/saveUI.jsp</result>
+	  		<result name="setPrivilegeUI">/WEB-INF/jsp/behind/roleAction/setPrivilegeUI.jsp</result>
+	  		<result name="toList" type="redirectAction">role_list</result>
+	  	</action>
+	  	
+	  	<!-- 首页 -->
+		<action name="home_*" class="homeAction" method="{1}">
+			<result name="{1}">/WEB-INF/jsp/behind/homeAction/{1}.jsp</result>
+		</action>
+		
+		
+		
+		<!-- 用户管理 -->
+	  	<action name="user_*" class="userAction" method="{1}">
+	  		<result name="list">/WEB-INF/jsp/behind/userAction/list.jsp</result>
+	  		<result name="saveUI">/WEB-INF/jsp/behind/userAction/saveUI.jsp</result>
+	  		<result name="toList" type="redirectAction">user_list?parentId=${parentId}</result>
+	  		
+	  		
+	  		<result name="logout">/WEB-INF/jsp/behind/userAction/logout.jsp</result> 
+<!--  	  		<result name="toIndex" type="redirect">/index.jsp</result>  -->
+ 	  		<result name="toIndex" type="redirectAction">home_index</result>
+	  	</action>
+		
+		
+		
+		<!-- 前台首页 -->
+ 		<action name="ahead_*" class="aheadAction" method="{1}"> 
+ 			<result name="index">/WEB-INF/jsp/ahead/aheadAction/carindex.jsp</result> 
+ 			
+ 			<result name="toIndex" type="redirectAction">ahead_index?parentId=${parentId}</result>
+		</action> 
+		
+		
+		
+		<!-- 考试管理 -->
+		<action name="exam_*" class="examAction" method="{1}">
+			<result name="list">/WEB-INF/jsp/behind/examAction/list.jsp</result>
+			<result name="saveUI">/WEB-INF/jsp/behind/examAction/saveUI.jsp</result>
+ 	  		<result name="toList" type="redirectAction">exam_list</result>
+		</action>
+		
+		
+		<!-- 财务管理 -->
+		<action name="finance_*" class="financeAction" method="{1}">
+			<result name="list">/WEB-INF/jsp/behind/financeAction/list.jsp</result>
+			<result name="saveUI">/WEB-INF/jsp/behind/financeAction/saveUI.jsp</result>
+ 	  		<result name="toList" type="redirectAction">finance_list</result>
+<!--  	  		<result name="repeat">/WEB-INF/jsp/behind/financeAction/repeat.jsp</result> -->
+			
+		</action>
+    </package>
+
+    <!-- Add packages here -->
+    
+    
+
+   
+
+</struts>

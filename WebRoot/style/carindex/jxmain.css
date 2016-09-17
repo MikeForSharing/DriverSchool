@@ -1,0 +1,77 @@
+/* CSS Document */
+body{ width:1000px; margin:0px; padding:0px; margin:0 auto;}
+#nav{ margin:0px; padding:0px;margin:0 auto; background-image:url(images/1/headbar.jpg);  width:940px; height:118px; }
+#headbar{ margin:0px; padding:0px;margin:0 auto; background-image:url(images/menu.gif); height:29px; margin-top:5px; width:940px; }
+#headbar ul{ margin:0px; padding:0px; margin:0 auto;float:none; width:930px; padding-top:8px; margin-left:0px;}
+#headbar ul li{ float:left; list-style:none; padding-left:31px; padding-right:2px;}
+.a1{ font-size:16px; color:#ffffff; text-decoration:none; font-weight:bold;}
+.a1:hover{ font-size:16px; color:#ffffff; text-decoration:none; font-weight:bold;}
+
+.hover{ font-size:16px; color:#ffffff; text-decoration:none; font-weight:bold;}
+#content{ margin:0px; padding:0px; margin:0 auto; margin-top:5px; width:940px;}
+
+.a2{text-decoration:none; color:#000000;}
+.a2:hover{ text-decoration:underline; color:#bc1748;}
+
+.a3{text-decoration:none; color:#0f3ab8; cursor:pointer}
+.a3:hover{ text-decoration:underline; color:#bc1748;cursor:pointer}
+
+.a4{text-decoration:none; color:#ff0000; cursor:pointer}
+.a4:hover{ text-decoration:underline; color:#ff0000;cursor:pointer}
+
+#left{float:left; width:218px; margin:0px; padding:0px;}
+#left_1{ margin:0px; padding:0px; border:1px solid #a6d0e7; width:218px;}
+#jxtj{margin:0px; padding:0px; background-image:url(images/1/6.gif); width:218px; height:29px;}
+
+.toptj{ float:left; margin:0px; padding:0px; width:200px; font-size:13px; margin-top:8px; text-align: center;}
+.toptj li{ list-style:none; padding-bottom:5px; padding-left:14px;}
+
+#top10{ margin:0px; padding:0px;}
+#top10 ul{ margin:0px; padding:0px; margin-top:8px;}
+#top10 ul li{ font-size:13px; list-style:none; padding-bottom:5px; padding-left:10px;}
+#top10 ul li img{ padding-right:5px;}
+
+#tab4{ font-size:13px; width:200px;}
+#tab4 tr td{ padding-left:3px; padding-top:5px; padding-bottom:5px; border-bottom:1px dashed #cccccc;}
+
+.sp1{ margin:0px; padding:0px; color:#0f3ab8; font-size:13px; padding-bottom:5px; line-height:22px; margin-top:8px; display:block ;margin-left:15px;}
+#div4{ margin:0px; padding:0px; margin-top:8px; margin-left:15px; overflow:hidden; white-space:nowrap}
+
+.sp7{ padding-right:15px; font-size:13px; padding-bottom:5px; display:block; float:left}
+
+
+.sp6{ margin:0px; padding:0px; font-size:14px; padding-bottom:5px; line-height:22px; margin-top:8px; margin-right:5px; display:block ;margin-left:15px;}
+
+#top1{ margin:0px; padding:0px; color:#0f3ab8; font-size:13px; padding-bottom:5px; line-height:22px; margin-top:8px; display:block ;margin-left:15px;}
+
+
+.sp4{ font-weight:bold; color:#003169; font-size:14px; padding-top:8px; display:block; padding-left:15px; float:left}
+
+#right_top{ float:right; width:710px; margin-left:10px!important*margin-left:8px;}
+#right{ float:right; width:710px; margin-left:10px!important*margin-left:8px; border:1px solid #a6d0e7}
+#title{ margin:0px; padding:0px; background-image:url(images/1/6.gif); width:710px; height:29px;}
+.title_nav{ margin:0px; padding:0px; background-image:url(images/1/6.gif); width:710px; height:29px;}
+#con_1{ margin:0px; padding:0px; margin-left:10px; margin-right:8px; margin-top:10px; margin-bottom:10px; font-size:14px; line-height:24px;}
+.p1{ float:left; margin-right:20px; margin-bottom:10px;}
+
+#tab2{ width:650px; margin-left:20px;}
+#tab2 tr td{ padding-top:5px; padding-bottom:2px; padding-left:10px; border-bottom:1px dashed #a6d0e7;}
+
+#tab3{ font-size:13px; width:680px;}
+#tab3 tr td{ padding-left:8px; padding-top:3px; padding-bottom:2px; border-bottom:1px dashed #cccccc;}
+
+#ul1{ margin:0px; padding:0px; width:690px;}
+#ul1 li{ list-style:none; padding-left:10px; padding-right:10px; float:left}
+.sp3{ padding:0px; margin:0px; display:block; float:left; padding-top:3px; padding-bottom:8px; padding-left:20px;}
+
+#div5{ clear:both; margin:0px; padding:0px; width:940px; margin:0 auto; margin-top:20px;}
+
+.sp10{ font-size:13px; text-align:center; display:block; line-height:22px;}
+
+#liucheng{ margin:0px; padding:0px; margin-left:8px;}
+#liucheng li{ list-style:none; float:left; width:115px; text-align:center; padding-top:8px; padding-bottom:1px;}
+.sp5{ clear:both; font-size:13px; color:#037fd7; font-weight:bold; display:block; padding-top:5px;}
+#tab5{ clear:both; width:940px; border:1px solid #a6d0e7; margin:0px; padding:0px; margin:0 auto; margin-top:8px;}
+
+#jxzs{margin:0px; padding:0px; background-image:url(images/6.gif); height:29px;}
+.ok table tr td{padding:3px;}
